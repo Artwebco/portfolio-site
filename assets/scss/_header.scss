@@ -1,0 +1,63 @@
+// This file contains all the styles for your main site header component.
+
+// Use the variables from the _variables.scss file.
+@use 'variables';
+
+.site-header {
+    // --- Layout and Positioning ---
+    // Use flexbox for a clean, horizontal layout.
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; // Make the header stick to the top of the page.
+    top: 0;
+    z-index: 1000;
+
+    // --- Styling and Aesthetics ---
+    background-color: variables.$darker-background;
+    padding: variables.$spacing-md variables.$spacing-lg;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Add a subtle shadow for depth.
+
+    // --- Responsive Design for the Header ---
+    @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+        padding: variables.$spacing-sm variables.$spacing-md;
+    }
+}
+
+.site-logo {
+    font-family: 'Inter', sans-serif; // Using a default since no variable was provided
+    font-size: variables.$font-size-md;
+    font-weight: bold;
+    color: variables.$text-color;
+
+    @media (max-width: 768px) {
+        margin-bottom: variables.$spacing-xs;
+    }
+}
+
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: variables.$spacing-md;
+    padding: 0;
+    margin: 0;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: variables.$spacing-xs;
+    }
+}
+
+.main-navigation a {
+    text-decoration: none;
+    color: variables.$text-color;
+    font-family: 'Inter', sans-serif; // Using a default since no variable was provided
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: variables.$logo-nikola-color;
+    }
+}

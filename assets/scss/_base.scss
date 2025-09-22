@@ -1,0 +1,10 @@
+// Initial base styles
+body {
+    background-color: #121212;
+}
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    // Add padding for mobile to prevent content from touching the screen edges.
+    // padding: 0 variables.$spacing-md;
+}
