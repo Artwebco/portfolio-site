@@ -1,10 +1,42 @@
-// Initial base styles
-body {
-    background-color: #121212;
+// _base.scss
+@use 'variables';
+@use 'layout';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
 }
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    // Add padding for mobile to prevent content from touching the screen edges.
-    // padding: 0 variables.$spacing-md;
+
+html {
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: variables.$font-primary;
+  font-size: variables.$font-size-sm;
+  line-height: 1.6;
+  color: variables.$text-color;
+  background-color: variables.$dark-background;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: variables.$logo-nikola-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }

@@ -10,13 +10,28 @@
 <body <?php body_class(); ?>>
 
     <header class="site-header">
-        <div class="container mx-auto">
+        <div class="container mx-auto flex-center">
+
             <div class="site-logo">
-                <a href="/">
-                    <span class="logo-nikola">Nikola</span>
-                    <span class="logo-nikovski">Nikovski</span>
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                    <?php
+                    if (function_exists('the_custom_logo') && has_custom_logo()) {
+                        the_custom_logo();
+                    } else {
+                        // Fallback: site name
+                    ?>
+                        <span class="logo-nikola"><?php bloginfo('name'); ?></span>
+                    <?php
+                    }
+                    ?>
                 </a>
             </div>
+
+            <button class="hamburger" aria-label="Open Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
             <nav class="main-navigation">
                 <?php
@@ -29,17 +44,17 @@
                 ?>
             </nav>
 
-            <div class="contact-info">
+            <div class="contact-info flex-center">
                 <div class="location">
-                    <i class="fa-solid fa-location-dot"></i>
+                    <i class="fa-light fa-location-dot"></i>
                     <span>Skopje, Macedonia</span>
                 </div>
                 <div class="phone">
-                    <i class="fa-solid fa-phone"></i>
+                    <i class="fa-light fa-phone"></i>
                     <span>+389 75 400 364</span>
                 </div>
                 <a href="#contact" class="contact-button">
-                    <i class="fa-solid fa-envelope"></i>
+                    <i class="fa-regular fa-envelope"></i>
                     <span>Contact Me</span>
                 </a>
             </div>

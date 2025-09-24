@@ -1,0 +1,35 @@
+// _layout.scss
+
+@use 'variables';
+@use 'mixins';
+
+.container {
+  width: 100%;
+  max-width: variables.$container-max-width;
+  margin: 0 auto;
+  padding-left: variables.$spacing-sm;
+  padding-right: variables.$spacing-sm;
+}
+
+.section {
+  padding: variables.$spacing-md 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.responsive-flex {
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.respond(variables.$breakpoint-md) {
+    flex-direction: row;
+  }
+}

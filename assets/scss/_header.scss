@@ -1,63 +1,149 @@
-// This file contains all the styles for your main site header component.
-
-// Use the variables from the _variables.scss file.
 @use 'variables';
 
 .site-header {
-    // --- Layout and Positioning ---
-    // Use flexbox for a clean, horizontal layout.
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #1d2839;
+  background-color: variables.$darker-background;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+
+  .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky; // Make the header stick to the top of the page.
-    top: 0;
-    z-index: 1000;
+    width: 100%;
+  }
 
-    // --- Styling and Aesthetics ---
-    background-color: variables.$darker-background;
-    padding: variables.$spacing-md variables.$spacing-lg;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Add a subtle shadow for depth.
-
-    // --- Responsive Design for the Header ---
-    @media (max-width: 768px) {
-        flex-direction: column;
-        text-align: center;
-        padding: variables.$spacing-sm variables.$spacing-md;
-    }
+  @media (max-width: 768px) {
+    padding: variables.$spacing-sm variables.$spacing-md;
+  }
 }
 
 .site-logo {
-    font-family: 'Inter', sans-serif; // Using a default since no variable was provided
-    font-size: variables.$font-size-md;
-    font-weight: bold;
-    color: variables.$text-color;
-
-    @media (max-width: 768px) {
-        margin-bottom: variables.$spacing-xs;
-    }
+  background: linear-gradient(135deg, hsl(142 76% 36%), hsl(47 96% 53%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  font-family: variables.$font-primary;
+  font-size: 20px;
 }
 
-.main-navigation ul {
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  color: #94a3b8;
+
+  @media (max-width: 768px) {
+    display: none; // hide on mobile
+  }
+}
+
+.contact-button {
+  background: linear-gradient(135deg, hsl(142 76% 36%), hsl(47 96% 53%));
+  border-radius: 15px;
+  color: #0d0908;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  gap: 10px;
+}
+  a.contact-button:hover{
+    
+        text-decoration: none;
+        background: linear-gradient(0deg, hsl(142 76% 36%), hsl(47 96% 53%));
+    
+  }
+// --- Main Navigation ---
+.main-navigation {
+  display: block;
+
+  ul.menu  {
     list-style: none;
     display: flex;
     gap: variables.$spacing-md;
-    padding: 0;
     margin: 0;
+    padding: 0;
+  }
 
-    @media (max-width: 768px) {
-        flex-direction: column;
-        gap: variables.$spacing-xs;
-    }
-}
-
-.main-navigation a {
+  a {
     text-decoration: none;
     color: variables.$text-color;
-    font-family: 'Inter', sans-serif; // Using a default since no variable was provided
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
+    font-size: 16px;
     transition: color 0.3s ease;
 
     &:hover {
-        color: variables.$logo-nikola-color;
+      color: variables.$logo-nikola-color;
     }
+  }
+
+  @media (max-width: 768px) {
+    display: none; // hidden on mobile by default
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    width: 200px;
+    background-color: variables.$dark-background;
+    border: 1px solid #1d2839;
+    border-radius: 8px;
+    padding: variables.$spacing-sm variables.$spacing-md;
+
+    &.active {
+      display: block;
+    }
+
+    ul.menu {
+      display: flex;
+      flex-direction: column;
+      gap: variables.$spacing-xs;
+    }
+  }
+}
+
+// --- Hamburger Menu ---
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: variables.$text-color;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+
+  &.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  &.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
 }

@@ -10,6 +10,7 @@ $logo-nikola-color: #9edc00;
 $logo-nikovski-color: #e3c400;
 $button-start-color: #40b434;
 $button-end-color: #a8d144;
+$text-gradient: linear-gradient(135deg, hsl(142 76% 36%), hsl(47 96% 53%));
 
 // Spacing
 $spacing-xs: 0.5rem;
@@ -20,3 +21,13 @@ $spacing-lg: 2.5rem;
 // Font sizes
 $font-size-sm: 0.9rem;
 $font-size-md: 1.5rem;
+
+// Breakpoints
+$breakpoint-sm: 576px;   // phones
+$breakpoint-md: 768px;   // tablets
+$breakpoint-lg: 1024px;  // small laptops
+$breakpoint-xl: 1280px;  // desktops
+$container-max-width: 1440px;
+
+//Font
+$font-primary: 'Inter';

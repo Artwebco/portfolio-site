@@ -1,10 +1,66 @@
-body {
-  background-color: #121212;
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
+.section {
+  padding: 2rem 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.responsive-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+html {
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter";
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #121212;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #9edc00;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .site-header {
@@ -14,53 +70,150 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid #1d2839;
   background-color: #0d0d0d;
-  padding: 2rem 2.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 @media (max-width: 768px) {
   .site-header {
-    flex-direction: column;
-    text-align: center;
     padding: 1.5rem 2rem;
   }
 }
 
 .site-logo {
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
+  background: linear-gradient(135deg, hsl(142, 76%, 36%), hsl(47, 96%, 53%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: bold;
-  color: #fff;
+  font-family: "Inter";
+  font-size: 20px;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  color: #94a3b8;
 }
 @media (max-width: 768px) {
-  .site-logo {
-    margin-bottom: 0.5rem;
+  .contact-info {
+    display: none;
   }
 }
 
-.main-navigation ul {
+.contact-button {
+  background: linear-gradient(135deg, hsl(142, 76%, 36%), hsl(47, 96%, 53%));
+  border-radius: 15px;
+  color: #0d0908;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  gap: 10px;
+}
+
+a.contact-button:hover {
+  text-decoration: none;
+  background: linear-gradient(0deg, hsl(142, 76%, 36%), hsl(47, 96%, 53%));
+}
+
+.main-navigation {
+  display: block;
+}
+.main-navigation ul.menu {
   list-style: none;
   display: flex;
   gap: 2rem;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
-@media (max-width: 768px) {
-  .main-navigation ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
 .main-navigation a {
   text-decoration: none;
   color: #fff;
   font-family: "Inter", sans-serif;
   font-weight: 500;
+  font-size: 16px;
   transition: color 0.3s ease;
 }
 .main-navigation a:hover {
   color: #9edc00;
 }
+@media (max-width: 768px) {
+  .main-navigation {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    width: 200px;
+    background-color: #121212;
+    border: 1px solid #1d2839;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+  }
+  .main-navigation.active {
+    display: block;
+  }
+  .main-navigation ul.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 
-/*# sourceMappingURL=style.css.map */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter/Inter-Regular.woff2") format("woff2"), url("../fonts/inter/Inter-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter/Inter-Bold.woff2") format("woff2"), url("../fonts/inter/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}/*# sourceMappingURL=style.css.map */
