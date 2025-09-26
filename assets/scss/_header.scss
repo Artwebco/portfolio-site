@@ -1,17 +1,15 @@
-@use 'variables';
+@use 'variables' as *;
 
 .site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
   z-index: 1000;
   border-bottom: 1px solid #1d2839;
-  background-color: variables.$darker-background;
+  background-color: #0d0908cc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 1rem;
-
+  position: fixed;
+  width: 100%;
+  -webkit-backdrop-filter: blur(25.8px);
+  backdrop-filter: blur(25.8px);
   .container {
     display: flex;
     justify-content: space-between;
@@ -20,17 +18,16 @@
   }
 
   @media (max-width: 768px) {
-    padding: variables.$spacing-sm variables.$spacing-md;
+    padding: $spacing-sm $spacing-md;
   }
 }
-
 .site-logo {
-  background: linear-gradient(135deg, hsl(142 76% 36%), hsl(47 96% 53%));
+  background: $yellow-gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: bold;
-  font-family: variables.$font-primary;
+  font-family: $font-primary;
   font-size: 20px;
 }
 
@@ -46,22 +43,23 @@
   }
 }
 
-.contact-button {
-  background: linear-gradient(135deg, hsl(142 76% 36%), hsl(47 96% 53%));
-  border-radius: 15px;
-  color: #0d0908;
-  padding: 8px 15px;
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  gap: 10px;
-}
-  a.contact-button:hover{
+// .contact-button {
+//   background: $yellow-gradient;
+//   border-radius: 15px;
+//   color: #0d0908;
+//   padding: 8px 15px;
+//   display: flex;
+//   align-items: center;
+//   font-weight: 500;
+//   gap: 10px;
+//   text-decoration: none;
+// }
+//   a.contact-button:hover{
     
-        text-decoration: none;
-        background: linear-gradient(0deg, hsl(142 76% 36%), hsl(47 96% 53%));
+//         text-decoration: none;
+//         background: linear-gradient(0deg, hsl(142 76% 36%), hsl(47 96% 53%));
     
-  }
+//   }
 // --- Main Navigation ---
 .main-navigation {
   display: block;
@@ -69,22 +67,22 @@
   ul.menu  {
     list-style: none;
     display: flex;
-    gap: variables.$spacing-md;
+    gap: $spacing-md;
     margin: 0;
     padding: 0;
   }
 
   a {
     text-decoration: none;
-    color: variables.$text-color;
+    color: $text-color;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 16px;
     transition: color 0.3s ease;
 
-    &:hover {
-      color: variables.$logo-nikola-color;
-    }
+    // &:hover {
+    //   color: $logo-nikola-color;
+    // }
   }
 
   @media (max-width: 768px) {
@@ -93,10 +91,10 @@
     top: 60px;
     right: 15px;
     width: 200px;
-    background-color: variables.$dark-background;
+    background-color: $dark-background;
     border: 1px solid #1d2839;
     border-radius: 8px;
-    padding: variables.$spacing-sm variables.$spacing-md;
+    padding: $spacing-sm $spacing-md;
 
     &.active {
       display: block;
@@ -105,7 +103,7 @@
     ul.menu {
       display: flex;
       flex-direction: column;
-      gap: variables.$spacing-xs;
+      gap: $spacing-xs;
     }
   }
 }
@@ -126,7 +124,7 @@
     display: block;
     height: 3px;
     width: 100%;
-    background-color: variables.$text-color;
+    background-color: $text-color;
     border-radius: 2px;
     transition: all 0.3s ease;
   }

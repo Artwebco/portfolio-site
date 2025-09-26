@@ -1,0 +1,132 @@
+@use 'variables' as *;
+
+.hero{
+    display: flex;
+        align-items: center;
+        min-height: 100vh;
+        position: relative;
+        justify-content: center;
+        overflow: hidden;
+
+}
+.hero-content-wrapper{
+   display: flex;
+   justify-content: flex-end; /* push items to the right */
+   align-items: flex-start;   /* optional: keep it at the top */
+   position: absolute;
+   width: 100%;
+   .badge.years{
+    margin-left: auto;
+   }
+
+}
+.hero-image-wrapper{
+    width: 100%;
+    height: 100vh;
+
+       &:before{
+        content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right,#0d0908e6, hsl(15 23% 4% / 0.7) , #00000000);
+   }
+}
+.hero-image{
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+}
+.exp-years{
+  display: flex;
+  justify-content: flex-end;
+}
+.hero-left,
+.hero-right {
+  flex: 1; /* makes them equal width */
+  max-width: 50%;
+}
+.hero-left{
+    h1{
+        font-size: 4.5rem;
+        line-height: 1;
+        margin: 10px 0 0 0;
+    }
+    .subtitle{
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        margin: 15px 0 0 0;
+        color: $light-color;
+        font-weight: 400;
+    }
+    .title{
+        color: $green-color;
+    }
+    .hero_description{
+        color: $light-color;
+        font-size: 1.125rem;
+        margin: 15px 0 0 0;
+            max-width: 32rem;
+    }
+    .hero-buttons{
+       margin: 40px 0 0 0;
+    }
+}
+.hero-right{
+    .badge{
+    border-radius: 50px;
+    color: $darker-color;
+    padding: 0.5rem 1rem;
+}
+.years{
+    background: $yellow;
+}
+.projects{
+    background: $green-color;
+}
+}
+.profile-image{
+    animation: float 6s ease-in-out infinite;
+    width: 22rem;
+    border-radius: 100%;
+    border: 1px solid #1d2839;
+}
+.availability{
+    color: $yellow;
+    border: 1px solid rgb(250, 200, 20, 0.5);
+    border-radius: 10px;
+    padding: 0.125rem 0.625rem;
+    background-color: rgba(250, 200, 20, 0.1);
+    font-size: 12px;
+    font-weight: 600;
+}
+.projects,
+.exp-years{
+        animation: float 6s ease-in-out infinite;
+}
+.name{
+     background: $yellow-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-social-icons{
+    font-size: 12px;
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    .social-icon{
+    color: $text-color;
+        &:hover{
+            color: $yellow;
+        }
+    }
+}
+.hero-right{
+    display: flex;
+    justify-content: flex-end;
+}

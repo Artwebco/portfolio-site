@@ -1,18 +1,18 @@
 // _layout.scss
 
-@use 'variables';
+@use 'variables' as *;
 @use 'mixins';
 
 .container {
   width: 100%;
-  max-width: variables.$container-max-width;
+  max-width: $container-max-width;
   margin: 0 auto;
-  padding-left: variables.$spacing-sm;
-  padding-right: variables.$spacing-sm;
+  padding-left: $spacing-sm;
+  padding-right: $spacing-sm;
 }
 
 .section {
-  padding: variables.$spacing-md 0;
+  padding: $spacing-md 0;
 }
 
 .flex {
@@ -29,7 +29,7 @@
   display: flex;
   flex-direction: column;
 
-  @include mixins.respond(variables.$breakpoint-md) {
+  @include mixins.respond($breakpoint-md) {
     flex-direction: row;
   }
 }

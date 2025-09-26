@@ -1,0 +1,46 @@
+// _buttons.scss
+@use 'variables' as *;
+// Base button
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1.5rem;
+  font-weight: 500;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  gap:10px;
+
+  &--primary {
+    background: $yellow-gradient;
+    color: #000;
+
+    &:hover {
+      box-shadow: rgba(250, 200, 20, 0.2) 0 0 30px;
+    }
+  }
+
+  &--secondary {
+    background: $darker-color;
+    border: 1px solid #1d2839;
+    color: #fff;
+
+    &:hover {
+       background-color: $yellow;
+       color: $darker-color;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $yellow;
+    border: 2px solid $yellow;
+
+    &:hover {
+      background: $darker-color;
+    }
+  }
+}

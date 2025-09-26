@@ -1,6 +1,6 @@
 // _base.scss
-@use 'variables';
-@use 'layout';
+@use 'variables' as *;
+@use 'layout' as *;
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -17,26 +17,26 @@ html {
 }
 
 body {
-  font-family: variables.$font-primary;
-  font-size: variables.$font-size-sm;
+  font-family: $font-primary;
+  font-size: $font-size-sm;
   line-height: 1.6;
-  color: variables.$text-color;
-  background-color: variables.$dark-background;
+  color: $text-color;
+  background-color: $dark-background;
   margin: 0;
   padding: 0;
 }
 
-a {
-  color: variables.$logo-nikola-color;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
+// a {
+//   color: $logo-nikola-color;
+//   text-decoration: none;
+// }
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+.site-main{
+  position: absolute;
+  width: 100%;
 }

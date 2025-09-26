@@ -53,10 +53,11 @@
                     <i class="fa-light fa-phone"></i>
                     <span>+389 75 400 364</span>
                 </div>
-                <a href="#contact" class="contact-button">
+                <a href="#contact" class="btn btn--primary">
                     <i class="fa-regular fa-envelope"></i>
                     <span>Contact Me</span>
                 </a>
             </div>
         </div>
+
     </header>
